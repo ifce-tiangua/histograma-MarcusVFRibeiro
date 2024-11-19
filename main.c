@@ -16,7 +16,6 @@ int main()
     scanf("%d", vendas[i]);
   }
 
-  printf("\nHistograma: \n");
   imprime_histograma(vendas, nc);
 
   for(int i = 0; i < nc; i++)
@@ -31,13 +30,12 @@ void imprime_histograma(int *vendas[], int num_categorias)
   for(int i = 0; i < num_categorias; i++)
   {
     int vc = *vendas[i];
-    printf("%d", vc);
+    printf("%d ", vc);
 
     for(int k = 0; k < vc; k++)
     {
       printf("*");
     }
-
     printf("\n");
   }
 }
