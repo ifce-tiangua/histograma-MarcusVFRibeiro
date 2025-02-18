@@ -1,10 +1,42 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 
-int main(){
+void imprime_histograma(int *vendas[], int num_categorias);
 
-    //insira aqui seu código
-    printf("Nao implementado ainda...");
-    
-    return 0;
+int main()
+{
+  int nc;
+  scanf("%d",&nc);
+
+  int **vendas = (int**)malloc(sizeof(int*)*nc);
+
+  for(int i = 0; i < nc; i++)
+  {
+    vendas[i] = (int*)malloc(sizeof(int));
+    scanf("%d", vendas[i]);
+  }
+
+  imprime_histograma(vendas, nc);
+
+  for(int i = 0; i < nc; i++)
+  {
+    free(vendas[i]);
+  }
+  free(vendas);
+}
+
+void imprime_histograma(int *vendas[], int num_categorias)
+{
+  for(int i = 0; i < num_categorias; i++)
+  {
+    int vc = *vendas[i];
+    printf("%d ", vc);
+
+    for(int k = 0; k < vc; k++)
+    {
+      printf("*");
+    }
+
+    printf("\n");
+  }
 }
