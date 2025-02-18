@@ -36,7 +36,6 @@ void imprime_histograma(int *vendas[], int num_categorias)
     {
       printf("*");
     }
-
     printf("\n");
   }
 }
